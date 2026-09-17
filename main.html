@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dina Mallek — Information Systems Engineer</title>
+<meta name="description" content="Portfolio of Dina Mallek, information systems engineer working across AI, data and business process automation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E1626'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%2316A394' text-anchor='middle'%3EDM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --ink:#0E1626;
+    --ink-2:#141F35;
+    --paper:#F4F6F5;
+    --paper-2:#EAEDEC;
+    --graphite:#1B2430;
+    --muted:#4B5568;
+    --muted-dark:#9AA5B4;
+    --teal:#16A394;
+    --teal-dim:#0F8074;
+    --amber:#C6883A;
+    --rose:#B4585B;
+    --line:#DDE3E4;
+    --line-dark:rgba(255,255,255,0.14);
+    --radius:4px;
+    --maxw:1180px;
+    --font-display:'Space Grotesk',sans-serif;
+    --font-body:'IBM Plex Sans',sans-serif;
+    --font-mono:'IBM Plex Mono',monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--graphite);
+    background:var(--paper);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:var(--font-display);
+    margin:0;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+
+  p{margin:0 0 1em 0; max-width:62ch;}
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--teal); color:var(--ink); padding:10px 16px;
+    z-index:200; border-radius:0 0 6px 0;
+  }
+  .skip-link:focus{left:0;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--teal);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  .section{padding:104px 0;}
+  @media (max-width:720px){ .section{padding:72px 0;} }
+
+  .section-dark{background:var(--ink); color:#EDEFF3;}
+  .section-dark .muted{color:var(--muted-dark);}
+  .muted{color:var(--muted);}
+
+  .section-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:40px;
+  }
+  .section-head .tick{
+    width:30px; height:4px; background:var(--teal); flex:none;
+  }
+  .section-head h2{font-size:clamp(1.65rem,2.2vw + 1rem,2.35rem);}
+  .section-dark .section-head .tick{background:var(--teal);}
+
+  .eyebrow-kicker{
+    font-family:var(--font-mono);
+    font-size:0.8rem;
+    color:var(--teal);
+    margin-bottom:10px;
+    letter-spacing:0.02em;
+  }
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(14,22,38,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .nav-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:16px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{
+    font-family:var(--font-display);
+    color:#fff;
+    font-weight:600;
+    font-size:1.05rem;
+    text-decoration:none;
+  }
+  .brand span{color:var(--teal);}
+  .nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+    margin:0; padding:0;
+  }
+  .nav-links a{
+    color:#C8CEDA;
+    text-decoration:none;
+    font-size:0.95rem;
+    transition:color .15s ease;
+  }
+  .nav-links a:hover{color:#fff;}
+  .nav-right{display:flex; align-items:center; gap:18px;}
+  .icon-btn{
+    color:#C8CEDA;
+    font-size:1.1rem;
+    text-decoration:none;
+    transition:color .15s ease;
+  }
+  .icon-btn:hover{color:var(--teal);}
+  .nav-toggle{
+    display:none;
+    background:none; border:none; color:#fff; font-size:1.4rem;
+    cursor:pointer;
+  }
+  @media (max-width:820px){
+    .nav-links{
+      position:fixed; inset:64px 0 auto 0;
+      background:var(--ink);
+      flex-direction:column;
+      padding:20px 32px 28px;
+      gap:18px;
+      border-bottom:1px solid var(--line-dark);
+      transform:translateY(-130%);
+      transition:transform .25s ease;
+    }
+    .nav-links.open{transform:translateY(0);}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--ink);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size:26px 26px;
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:40px;
+    align-items:center;
+    padding-top:64px;
+    padding-bottom:24px;
+  }
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr; padding-top:40px;}
+    .hero-graphic{display:none;}
+  }
+  .hero-eyebrow{
+    font-family:var(--font-mono);
+    color:var(--teal);
+    font-size:0.85rem;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(2.5rem,4.3vw + 1rem,4.1rem);
+    line-height:1.05;
+    color:#fff;
+  }
+  .hero .role{
+    font-size:clamp(1.1rem,1.4vw + 0.5rem,1.4rem);
+    color:#C8CEDA;
+    margin-top:18px;
+    font-family:var(--font-display);
+    font-weight:500;
+    max-width:34ch;
+  }
+  .hero .lede{
+    margin-top:22px;
+    color:var(--muted-dark);
+    max-width:52ch;
+    font-size:1.02rem;
+  }
+  .hero-cta{
+    display:flex; gap:16px; margin-top:32px; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:13px 22px;
+    border-radius:var(--radius);
+    font-size:0.95rem;
+    font-weight:500;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    font-family:var(--font-body);
+  }
+  .btn-primary{background:var(--teal); color:#06231F;}
+  .btn-primary:hover{background:#1DBBAB;}
+  .btn-ghost{border-color:var(--line-dark); color:#fff;}
+  .btn-ghost:hover{border-color:var(--teal); color:var(--teal);}
+  .section-dark .btn-ghost{border-color:var(--line-dark);}
+  .btn-ghost.on-light{border-color:var(--line); color:var(--graphite);}
+  .btn-ghost.on-light:hover{border-color:var(--teal); color:var(--teal-dim);}
+
+  .hero-meta{
+    display:flex; gap:22px; margin-top:40px; flex-wrap:wrap;
+    padding-top:28px; border-top:1px solid var(--line-dark);
+    font-size:0.9rem; color:var(--muted-dark);
+  }
+  .hero-meta a{text-decoration:none; color:inherit;}
+  .hero-meta span{display:inline-flex; align-items:center; gap:8px;}
+  .hero-meta a:hover{color:var(--teal);}
+
+  .hero-graphic svg{width:100%; height:auto;}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:56px;
+  }
+  @media (max-width:820px){ .about-grid{grid-template-columns:1fr; gap:32px;} }
+  .facts{
+    display:flex; flex-direction:column; gap:22px;
+    border-left:1px solid var(--line);
+    padding-left:28px;
+  }
+  @media (max-width:820px){ .facts{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:24px;} }
+  .fact-label{
+    font-family:var(--font-mono);
+    font-size:0.78rem;
+    color:var(--teal-dim);
+    margin-bottom:4px;
+  }
+  .fact-value{font-size:1.02rem;}
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{
+    position:relative;
+    margin-top:8px;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:19px; top:6px; bottom:6px;
+    width:2px;
+    background:var(--line);
+  }
+  .t-item{
+    position:relative;
+    padding-left:56px;
+    margin-bottom:44px;
+  }
+  .t-item:last-child{margin-bottom:0;}
+  .t-node{
+    position:absolute; left:0; top:0;
+    width:40px; height:40px;
+    border-radius:8px;
+    background:var(--paper);
+    border:1.5px solid var(--teal);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--teal-dim);
+    font-size:1.05rem;
+    z-index:1;
+  }
+  .t-period{
+    font-family:var(--font-mono);
+    font-size:0.82rem;
+    color:var(--teal-dim);
+    margin-bottom:6px;
+  }
+  .t-item h3{font-size:1.2rem; margin-bottom:6px;}
+  .t-org{color:var(--muted); font-size:0.95rem; margin-bottom:10px;}
+  .t-mentors{font-size:0.88rem; color:var(--muted); margin-top:10px;}
+
+  /* ---------- FLAGSHIP ---------- */
+  .flagship{background:var(--ink); color:#fff;}
+  .flagship-grid{
+    display:grid; gap:44px;
+  }
+  .flagship h3{
+    font-size:clamp(1.5rem,2vw + 1rem,2.1rem);
+    max-width:18ch;
+    margin-bottom:20px;
+    color:#fff;
+  }
+  .flagship-desc p{
+    color:var(--muted-dark);
+    max-width:68ch;
+  }
+  .flagship-desc strong{color:#fff; font-weight:600;}
+
+  .pipeline-wrap{
+    overflow-x:auto;
+    margin:40px 0 8px;
+    padding-bottom:8px;
+  }
+  .pipeline-wrap svg{min-width:760px;}
+
+  .tag-row{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-top:28px;
+  }
+  .tag{
+    display:inline-flex; align-items:center; gap:7px;
+    border:1px solid var(--line-dark);
+    padding:7px 12px;
+    border-radius:20px;
+    font-family:var(--font-mono);
+    font-size:0.8rem;
+    color:#EDEFF3;
+  }
+  .tag i{color:var(--teal); font-size:0.85rem;}
+  .section:not(.section-dark) .tag{border-color:var(--line); color:var(--graphite);}
+  .section:not(.section-dark) .tag i{color:var(--teal-dim);}
+
+  .flagship-links{margin-top:32px; display:flex; gap:16px; flex-wrap:wrap;}
+
+  /* ---------- PROJECTS ---------- */
+  .legend{
+    display:flex; gap:22px; flex-wrap:wrap;
+    margin:-16px 0 40px;
+    font-size:0.86rem; color:var(--muted);
+  }
+  .legend span{display:inline-flex; align-items:center; gap:8px;}
+  .dot{width:9px; height:9px; border-radius:50%; display:inline-block;}
+  .dot.ai{background:var(--teal);}
+  .dot.data{background:var(--amber);}
+  .dot.security{background:var(--rose);}
+  .dot.eng{background:#7C8798;}
+
+  .project-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:26px;
+  }
+  @media (max-width:820px){ .project-grid{grid-template-columns:1fr;} }
+
+  .card{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:#fff;
+    padding:28px 26px 24px;
+    display:flex; flex-direction:column;
+    border-top:3px solid #7C8798;
+  }
+  .card.cat-ai{border-top-color:var(--teal);}
+  .card.cat-data{border-top-color:var(--amber);}
+  .card.cat-security{border-top-color:var(--rose);}
+
+  .card-top{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    gap:12px; margin-bottom:12px;
+  }
+  .card h3{font-size:1.12rem; line-height:1.35;}
+  .card-year{
+    font-family:var(--font-mono); font-size:0.78rem; color:var(--muted);
+    white-space:nowrap; margin-top:4px;
+  }
+  .card-prize{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:0.78rem; color:var(--amber); margin-bottom:10px;
+    font-family:var(--font-mono);
+  }
+  .card p{font-size:0.95rem; color:var(--muted); margin-bottom:18px;}
+  .card-tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; margin-bottom:16px;}
+  .pill{
+    display:inline-flex; align-items:center; gap:6px;
+    background:var(--paper-2);
+    border-radius:16px;
+    padding:5px 11px;
+    font-family:var(--font-mono);
+    font-size:0.76rem;
+    color:var(--graphite);
+  }
+  .pill i{font-size:0.78rem; color:var(--teal-dim);}
+  .card-foot{
+    display:flex; justify-content:flex-end;
+    border-top:1px solid var(--line);
+    padding-top:14px;
+  }
+  .gh-link{
+    display:inline-flex; align-items:center; gap:8px;
+    text-decoration:none; color:var(--graphite);
+    font-size:0.88rem;
+  }
+  .gh-link:hover{color:var(--teal-dim);}
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px 32px;
+  }
+  @media (max-width:900px){ .skills-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .skills-grid{grid-template-columns:1fr;} }
+  .skill-group h3{
+    font-size:0.98rem;
+    font-family:var(--font-mono);
+    font-weight:500;
+    color:var(--teal-dim);
+    margin-bottom:16px;
+  }
+  .skill-tags{display:flex; flex-wrap:wrap; gap:9px;}
+  .skill-tags .pill{background:transparent; border:1px solid var(--line);}
+
+  /* ---------- CERT + LANG ---------- */
+  .cert-lang-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:56px;
+  }
+  @media (max-width:820px){ .cert-lang-grid{grid-template-columns:1fr; gap:36px;} }
+  .cert-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:16px;}
+  .cert-list li{
+    display:flex; align-items:flex-start; gap:14px;
+    padding-bottom:16px; border-bottom:1px solid var(--line);
+    font-size:0.95rem;
+  }
+  .cert-list li:last-child{border-bottom:none;}
+  .cert-list i{color:var(--teal-dim); font-size:1.05rem; margin-top:2px;}
+  .cert-name{font-weight:500;}
+  .cert-issuer{color:var(--muted); font-size:0.88rem;}
+
+  .lang-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .lang-card{
+    border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 18px;
+  }
+  .lang-name{display:flex; align-items:center; gap:9px; font-weight:500; margin-bottom:4px;}
+  .lang-name i{color:var(--teal-dim);}
+  .lang-level{font-size:0.85rem; color:var(--muted); font-family:var(--font-mono);}
+
+  /* ---------- FOOTER ---------- */
+  .footer{background:var(--ink); color:#fff;}
+  .footer-top{
+    display:grid; grid-template-columns:1.3fr 1fr; gap:40px;
+    align-items:end;
+    padding-bottom:44px;
+    border-bottom:1px solid var(--line-dark);
+  }
+  @media (max-width:720px){ .footer-top{grid-template-columns:1fr;} }
+  .footer h2{font-size:clamp(1.7rem,2.6vw + 1rem,2.6rem); color:#fff; max-width:14ch;}
+  .footer .lede{color:var(--muted-dark); max-width:46ch; margin-top:16px;}
+  .footer-contacts{display:flex; flex-direction:column; gap:14px;}
+  .footer-contacts a{
+    display:flex; align-items:center; gap:12px;
+    text-decoration:none; color:#EDEFF3; font-size:0.98rem;
+  }
+  .footer-contacts a:hover{color:var(--teal);}
+  .footer-contacts i{width:18px; color:var(--teal); text-align:center;}
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center;
+    padding-top:26px; flex-wrap:wrap; gap:14px;
+    color:var(--muted-dark); font-size:0.85rem;
+  }
+  .footer-social{display:flex; gap:16px;}
+  .footer-social a{color:var(--muted-dark); font-size:1.15rem; text-decoration:none;}
+  .footer-social a:hover{color:var(--teal);}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none;}
+  }
+
+/* =========================================================
+   2026 EDITORIAL REDESIGN
+   Inspired by a bold orange / ivory split-screen portfolio.
+   ========================================================= */
+:root{
+  --ink:#17130F;
+  --ink-2:#241B16;
+  --paper:#F8F3EA;
+  --paper-2:#EFE8DE;
+  --graphite:#221C18;
+  --muted:#766C63;
+  --muted-dark:#B8ADA4;
+  --teal:#FF6A00;
+  --teal-dim:#D95300;
+  --amber:#FFB11B;
+  --rose:#C94646;
+  --line:#DED5C9;
+  --line-dark:rgba(255,255,255,.16);
+  --radius:24px;
+  --maxw:1240px;
+  --font-display:'Space Grotesk',sans-serif;
+  --font-body:'IBM Plex Sans',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+}
+
+body{
+  background:var(--paper);
+  color:var(--graphite);
+}
+
+.wrap{max-width:var(--maxw);padding:0 28px;}
+.section{padding:108px 0;}
+
+.nav{
+  position:sticky;
+  top:0;
+  background:rgba(248,243,234,.88);
+  border-bottom:1px solid rgba(23,19,15,.08);
+  backdrop-filter:blur(16px);
+}
+.nav-inner{max-width:var(--maxw);padding:15px 28px;}
+.brand{color:var(--ink);font-weight:700;letter-spacing:-.03em;}
+.brand span{color:var(--teal);}
+.nav-links a,.icon-btn{color:#4A4038;}
+.nav-links a:hover,.icon-btn:hover{color:var(--teal);}
+.nav-toggle{color:var(--ink);}
+
+.section-head{
+  justify-content:space-between;
+  margin-bottom:52px;
+  gap:20px;
+}
+.section-head .tick{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:var(--teal);
+  position:relative;
+}
+.section-head .tick::after{
+  content:"↗";
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-size:1rem;
+  font-family:var(--font-display);
+}
+.section-head h2{
+  font-size:clamp(2.1rem,4vw,4rem);
+  line-height:1;
+  letter-spacing:-.055em;
+  margin-right:auto;
+}
+
+.hero{
+  background:var(--paper);
+  color:var(--ink);
+  padding:18px 18px 0;
+  overflow:visible;
+}
+.hero-shell{
+  min-height:700px;
+  max-width:1380px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  border-radius:32px;
+  overflow:hidden;
+  box-shadow:0 28px 70px rgba(76,45,20,.14);
+}
+.hero-left{
+  position:relative;
+  overflow:hidden;
+  min-width:0;
+  padding:72px 58px 48px;
+  background:
+    radial-gradient(circle at 78% 58%, rgba(255,192,71,.78), transparent 28%),
+    radial-gradient(circle at 35% 15%, rgba(255,147,49,.65), transparent 33%),
+    linear-gradient(135deg,#E84B00 0%,#FF6A00 44%,#FF9A14 100%);
+  color:#fff;
+}
+.hero-left::before,
+.hero-left::after{
+  content:"";
+  position:absolute;
+  border:1px solid rgba(255,255,255,.17);
+  border-radius:42% 58% 65% 35% / 43% 39% 61% 57%;
+}
+.hero-left::before{width:520px;height:520px;right:-250px;top:-220px;transform:rotate(24deg);}
+.hero-left::after{width:460px;height:460px;left:-220px;bottom:-290px;transform:rotate(-12deg);}
+.hero-kicker-row{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.08em;
+}
+.hero-eyebrow{color:#fff;margin:0;}
+.availability-dot{width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 0 5px rgba(255,255,255,.12);}
+.availability-text{opacity:.76;}
+.hero-title-wrap{position:relative;z-index:2;margin-top:70px;}
+.hero-watermark{
+  position:absolute;
+  top:-76px;
+  left:-4px;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(7rem,14vw,11rem);
+  line-height:.78;
+  letter-spacing:-.08em;
+  color:rgba(255,255,255,.12);
+  user-select:none;
+  white-space:nowrap;
+}
+.hero h1{
+  position:relative;
+  font-size:clamp(4.3rem,7.6vw,7.7rem);
+  line-height:.78;
+  letter-spacing:-.08em;
+  text-transform:uppercase;
+  color:#fff;
+  max-width:6.5ch;
+}
+.hero .role{
+  position:relative;
+  z-index:2;
+  margin-top:34px;
+  color:#fff;
+  font-size:1.13rem;
+  max-width:32ch;
+}
+.hero .lede{
+  position:relative;
+  z-index:2;
+  color:rgba(255,255,255,.78);
+  max-width:45ch;
+  margin-top:16px;
+}
+.hero-cta{position:relative;z-index:2;margin-top:30px;}
+.btn{
+  border-radius:999px;
+  padding:13px 19px;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease;
+}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{
+  background:#fff;
+  color:var(--ink);
+  box-shadow:0 10px 24px rgba(94,37,0,.16);
+}
+.btn-primary:hover{background:#fff;box-shadow:0 14px 32px rgba(94,37,0,.22);}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:#fff;}
+.btn-ghost:hover{border-color:#fff;color:#fff;background:rgba(255,255,255,.09);}
+.hero-meta{
+  position:relative;
+  z-index:2;
+  border-top:1px solid rgba(255,255,255,.28);
+  margin-top:46px;
+  padding-top:22px;
+  color:rgba(255,255,255,.8);
+  font-size:.84rem;
+}
+
+.hero-right{
+  background:#FFFCF7;
+  padding:46px 44px 34px;
+  display:grid;
+  grid-template-rows:auto 1fr auto auto;
+  min-width:0;
+}
+.hero-right-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:24px;
+}
+.hero-right-label{
+  font-family:var(--font-mono);
+  font-size:.68rem;
+  letter-spacing:.1em;
+  color:#B55A1F;
+}
+.hero-right-top strong{
+  font-size:1.35rem;
+  line-height:1.02;
+  text-align:right;
+  letter-spacing:-.045em;
+}
+.hero-visual{
+  position:relative;
+  min-height:360px;
+  margin:12px 0 8px;
+}
+.visual-core{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:214px;
+  height:214px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#23150D,#4A210C 68%,#F26722 140%);
+  box-shadow:0 42px 70px rgba(91,39,10,.28);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  color:#fff;
+  font-family:var(--font-display);
+  font-size:2.4rem;
+  font-weight:700;
+  letter-spacing:-.06em;
+  z-index:3;
+}
+.visual-core small{font-size:1rem;opacity:.55;}
+.visual-orb{position:absolute;border-radius:50%;filter:blur(.2px);}
+.orb-1{width:240px;height:240px;background:#FF8C25;left:7%;top:21%;opacity:.62;}
+.orb-2{width:160px;height:160px;background:#FFD18B;right:8%;top:18%;opacity:.88;}
+.orb-3{width:130px;height:130px;background:#E34F00;right:19%;bottom:6%;opacity:.55;}
+.visual-node{
+  position:absolute;
+  width:12px;height:12px;border-radius:50%;
+  background:#17130F;z-index:4;
+  box-shadow:0 0 0 7px rgba(23,19,15,.08);
+}
+.node-a{left:18%;top:24%}.node-b{right:14%;top:35%}.node-c{left:24%;bottom:13%}.node-d{right:24%;bottom:20%}
+.visual-line{position:absolute;height:1px;background:rgba(23,19,15,.25);transform-origin:left center;z-index:1;}
+.line-a{width:38%;left:21%;top:28%;transform:rotate(18deg)}
+.line-b{width:34%;left:54%;top:47%;transform:rotate(-20deg)}
+.line-c{width:31%;left:26%;bottom:24%;transform:rotate(-26deg)}
+
+.hero-quote-card{
+  border:1px solid #E6DED3;
+  border-radius:22px;
+  padding:18px 20px 16px;
+  background:rgba(255,255,255,.62);
+}
+.quote-mark{font-size:2rem;line-height:1;color:var(--teal);font-family:Georgia,serif;}
+.hero-quote-card p{font-size:.86rem;line-height:1.5;margin:0;color:#5A4D44;max-width:44ch;}
+.quote-foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-family:var(--font-mono);font-size:.65rem;letter-spacing:.06em;color:#8A7B70;}
+.quote-arrow{width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;}
+.hero-social{display:flex;gap:14px;margin-top:16px;}
+.hero-social a{
+  text-decoration:none;
+  font-size:.76rem;
+  color:#6A5D54;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+}
+.hero-social a:hover{color:var(--teal);}
+
+.about-grid{gap:70px;}
+.facts{
+  border-left:none;
+  background:#fff;
+  padding:26px 28px;
+  border-radius:24px;
+  box-shadow:0 16px 40px rgba(46,31,20,.06);
+}
+.fact-label{color:var(--teal-dim);letter-spacing:.05em;}
+
+#experience{background:#17130F !important;color:#F8F3EA;}
+#experience .section-head h2{color:#fff;}
+#experience .timeline::before{background:rgba(255,255,255,.15);}
+#experience .t-node{background:#251A14;border-color:#FF7B1C;color:#FF9A45;border-radius:50%;}
+#experience .t-period{color:#FF8E38;}
+#experience .t-item h3{color:#fff;}
+#experience .t-org,#experience .t-mentors,#experience .t-item p{color:#BEB0A4;}
+
+.flagship{
+  background:linear-gradient(135deg,#27150B 0%,#17130F 58%,#2A1104 100%);
+}
+.eyebrow-kicker{color:#FF8D38;}
+.flagship h3{font-size:clamp(2.2rem,4.2vw,4.7rem);line-height:.95;letter-spacing:-.055em;max-width:13ch;}
+.flagship-desc{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.flagship-desc p{
+  border-top:1px solid rgba(255,255,255,.14);
+  padding-top:20px;
+  font-size:.93rem;
+}
+.pipeline-wrap{
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:24px;
+  padding:14px;
+  background:rgba(255,255,255,.03);
+}
+.tag{border-radius:999px;background:rgba(255,255,255,.04);}
+.tag .tech-icon{filter:invert(1);}
+
+.project-grid{gap:20px;}
+.card{
+  border:none;
+  border-radius:26px;
+  background:#fff;
+  padding:26px;
+  box-shadow:0 14px 34px rgba(59,40,25,.06);
+  border-top:0;
+  transition:transform .22s ease,box-shadow .22s ease;
+  position:relative;
+  overflow:hidden;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  width:7px;
+  top:0;bottom:0;left:0;
+  background:#8C837C;
+}
+.card.cat-ai::before{background:#FF6A00;}
+.card.cat-data::before{background:#F2A000;}
+.card.cat-security::before{background:#B94C4C;}
+.card:hover{transform:translateY(-5px);box-shadow:0 22px 46px rgba(59,40,25,.11);}
+.card h3{font-size:1.22rem;letter-spacing:-.025em;}
+.pill{
+  border-radius:999px;
+  background:#F4EEE6;
+  border:1px solid #E8DFD4;
+}
+.tech-icon{
+  width:14px;
+  height:14px;
+  object-fit:contain;
+  display:inline-block;
+  flex:none;
+}
+.invert-on-dark{filter:invert(1);}
+
+#skills{background:#F0E7DB !important;}
+.skills-grid{gap:22px;}
+.skill-group{
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(106,83,62,.1);
+  border-radius:24px;
+  padding:22px;
+  min-height:180px;
+}
+.skill-group h3{color:#A84812;font-size:.86rem;letter-spacing:.02em;}
+.skill-tags .pill{background:#fff;border-color:#E4D9CC;}
+
+.cert-lang-grid{gap:30px;}
+.cert-list,.lang-grid{background:#fff;border-radius:24px;padding:22px;box-shadow:0 14px 34px rgba(59,40,25,.06);}
+.lang-card{border-radius:18px;background:#FFFDF9;}
+
+.footer{
+  background:#17130F;
+  position:relative;
+  overflow:hidden;
+}
+.footer::before{
+  content:"LET'S TALK";
+  position:absolute;
+  right:-30px;
+  top:18px;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(5rem,13vw,12rem);
+  letter-spacing:-.08em;
+  color:rgba(255,255,255,.035);
+  white-space:nowrap;
+}
+.footer h2{font-size:clamp(3rem,7vw,6rem);letter-spacing:-.06em;line-height:.9;}
+.footer-contacts a:hover,.footer-social a:hover{color:#FF8B36;}
+
+.reveal{transform:translateY(22px);}
+
+@media (max-width:980px){
+  .hero-shell{grid-template-columns:1fr;}
+  .hero-left{min-height:620px;}
+  .hero-right{min-height:620px;}
+  .flagship-desc{grid-template-columns:1fr;}
+}
+@media (max-width:820px){
+  .nav-links{background:#F8F3EA;border-bottom:1px solid rgba(23,19,15,.08);}
+  .nav-links a{color:var(--ink);}
+  .hero{padding:8px 8px 0;}
+  .hero-shell{border-radius:24px;}
+  .hero-left{padding:54px 28px 36px;min-height:580px;}
+  .hero-right{padding:34px 26px 28px;min-height:560px;}
+  .hero h1{font-size:clamp(4rem,18vw,6.3rem);}
+  .hero-watermark{font-size:clamp(6.2rem,26vw,9rem);}
+}
+@media (max-width:600px){
+  .wrap{padding:0 20px;}
+  .section{padding:78px 0;}
+  .hero-right-top{flex-direction:column;}
+  .hero-right-top strong{text-align:left;}
+  .hero-visual{min-height:310px;}
+  .visual-core{width:178px;height:178px;font-size:2rem;}
+  .hero-meta{flex-direction:column;gap:10px;}
+  .hero-social{flex-wrap:wrap;}
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Dina Mallek<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="icon-btn" href="https://github.com/dinouch" target="_blank" rel="noopener" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>
+      <a class="icon-btn" href="https://linkedin.com/in/dinamallek9" target="_blank" rel="noopener" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-shell">
+      <div class="hero-left">
+        <div class="hero-kicker-row">
+          <span class="hero-eyebrow">ALGIERS, ALGERIA</span>
+          <span class="availability-dot"></span>
+          <span class="availability-text">OPEN TO OPPORTUNITIES</span>
+        </div>
+
+        <div class="hero-title-wrap">
+          <div class="hero-watermark">BUILD</div>
+          <h1>Dina<br>Mallek</h1>
+        </div>
+
+        <p class="role">Information Systems Engineer · AI · Data · BPM</p>
+        <p class="lede">I design intelligent systems that connect AI with business processes, data and organizational needs.</p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects">Explore my work <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <a class="btn btn-ghost" href="#contact">Contact me</a>
+        </div>
+
+        <div class="hero-meta">
+          <span><i class="fa-solid fa-envelope"></i> <a href="mailto:kd_mallek@esi.dz">kd_mallek@esi.dz</a></span>
+          <span><i class="fa-solid fa-location-dot"></i> Algiers, Algeria</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-right-top">
+          <span class="hero-right-label">CURRENT FOCUS</span>
+          <strong>AI × Information<br>Systems</strong>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-orb orb-1"></div>
+          <div class="visual-orb orb-2"></div>
+          <div class="visual-orb orb-3"></div>
+          <div class="visual-core">
+            <span>AI</span>
+            <small>×</small>
+            <span>IS</span>
+          </div>
+          <span class="visual-node node-a"></span>
+          <span class="visual-node node-b"></span>
+          <span class="visual-node node-c"></span>
+          <span class="visual-node node-d"></span>
+          <span class="visual-line line-a"></span>
+          <span class="visual-line line-b"></span>
+          <span class="visual-line line-c"></span>
+        </div>
+
+        <div class="hero-quote-card">
+          <div class="quote-mark">“</div>
+          <p>Designing intelligent systems that make complex processes easier to understand, automate and improve.</p>
+          <div class="quote-foot">
+            <span>DINA MALLEK</span>
+            <div class="quote-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+          </div>
+        </div>
+
+        <div class="hero-social">
+          <a href="https://github.com/dinouch" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://linkedin.com/in/dinamallek9" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head"><span class="tick"></span><h2>About</h2></div>
+      <div class="about-grid reveal">
+        <div>
+          <p>I hold a diploma in Information Systems from the National School of Computer Science (ESI) in Algiers, with a particular interest in artificial intelligence and its integration within information systems. My background covers the analysis and design of systems, process modeling, automation and AI technologies, notably large language models and multi-agent systems.</p>
+          <p>Through my academic and research projects, I design intelligent solutions that improve and automate complex systems. I am looking to grow in a role at the intersection of information systems and AI, particularly around integrating AI into organizations, intelligent automation and business process management.</p>
+        </div>
+        <div class="facts">
+          <div>
+            <div class="fact-label">LOCATION</div>
+            <div class="fact-value">Algiers, Algeria</div>
+          </div>
+          <div>
+            <div class="fact-label">FOCUS</div>
+            <div class="fact-value">AI &amp; data, IS engineering, business process management</div>
+          </div>
+          <div>
+            <div class="fact-label">LANGUAGES</div>
+            <div class="fact-value">Kabyle, French, English, Arabic</div>
+          </div>
+          <div>
+            <div class="fact-label">LOOKING FOR</div>
+            <div class="fact-value">AI, data and information systems engineer roles</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience" style="background:var(--paper-2);">
+    <div class="wrap">
+      <div class="section-head"><span class="tick"></span><h2>Experience</h2></div>
+      <div class="timeline reveal">
+
+        <div class="t-item">
+          <div class="t-node"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="t-period">12/2020 — 06/2026</div>
+          <h3>State Engineer Diploma in Information Systems and Technologies</h3>
+          <div class="t-org">National School of Computer Science (ESI), Algiers</div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-node"><i class="fa-solid fa-flask"></i></div>
+          <div class="t-period">10/2025 — 06/2026</div>
+          <h3>Research Internship, CERIST &amp; UDST Qatar</h3>
+          <div class="t-org">Generating policies for fragmented business processes with LLMs</div>
+          <p>Designed a multi-agent system of five specialized agents, orchestrated through the FIPA-ACL protocol, that automatically generates ODRL 2.2 policies from BPMN process fragments using large language models.</p>
+          <div class="t-mentors">Mentored by Prof. Zakaria Maamar (UDST, Doha), Dr. Amel Benna (CERIST) and Dr. Abderrahmane Maaradji (UDST, Doha).</div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-node"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="t-period">08/2024 — 09/2024</div>
+          <h3>Practical Internship, Remote Djazaïr Services IT (RDSI)</h3>
+          <p>Built a microservices platform with Django REST and PostgreSQL to optimize partner management, matching partners against a skills network through a system of filters and advanced search options.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FLAGSHIP RESEARCH -->
+  <section class="section section-dark flagship" id="research">
+    <div class="wrap flagship-grid reveal">
+      <div class="eyebrow-kicker">FLAGSHIP RESEARCH</div>
+      <h3>Automated policy generation for fragmented business processes</h3>
+      <div class="flagship-desc">
+        <p>When a BPMN process is split into fragments that run independently, each fragment still needs a governance policy that captures who can do what and under which conditions, without losing the intent of the original process. This project, carried out during my research internship with <strong>CERIST</strong> and <strong>UDST Qatar</strong> and continued as my engineering thesis, addresses exactly that gap.</p>
+        <p>I designed a pipeline of five specialized agents coordinated through the <strong>FIPA-ACL</strong> communication protocol. A Graph Builder agent reconstructs the process structure, an Exception Handler manages irregular cases, a Semantic Validator checks the result against SHACL constraints over a JSON-LD and RDF representation, a Fragment Policy Generator produces the policy itself using GPT models served through Azure OpenAI, and a Syntax Audit Agent verifies the output. Together they implement a Business-to-Policy algorithm that outputs <strong>ODRL 2.2</strong> policies covering both authorized and denied fragment behavior.</p>
+        <p>I evaluated the system across incremental configurations using a Syntax Fidelity Score, BERTScore and F1-score, alongside an LLM-as-Judge setup comparing Kimi-K2.5 against Llama-3.3-70B-Instruct.</p>
+      </div>
+
+      <div class="pipeline-wrap">
+        <svg viewBox="0 0 1160 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pipeline diagram: BPMN fragment flows through five agents to an ODRL 2.2 policy">
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+              <path d="M0,0 L7,3 L0,6 Z" fill="#5B6472"/>
+            </marker>
+          </defs>
+          <g font-family="IBM Plex Mono, monospace" font-size="12" fill="#C8CEDA">
+            <!-- input -->
+            <rect x="10" y="80" width="120" height="56" rx="6" fill="none" stroke="#5B6472" stroke-width="1.4"/>
+            <text x="70" y="105" text-anchor="middle" fill="#EDEFF3" font-size="12">BPMN</text>
+            <text x="70" y="121" text-anchor="middle" fill="#EDEFF3" font-size="12">fragment</text>
+            <line x1="130" y1="108" x2="168" y2="108" stroke="#5B6472" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+            <!-- GBA -->
+            <rect x="170" y="72" width="150" height="72" rx="6" fill="#141F35" stroke="#16A394" stroke-width="1.6"/>
+            <text x="245" y="103" text-anchor="middle" fill="#16A394" font-weight="600" font-size="14">GBA</text>
+            <text x="245" y="122" text-anchor="middle" fill="#C8CEDA" font-size="10.5">Graph Builder</text>
+            <line x1="320" y1="108" x2="358" y2="108" stroke="#5B6472" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+            <!-- EHA -->
+            <rect x="360" y="72" width="150" height="72" rx="6" fill="#141F35" stroke="#16A394" stroke-width="1.6"/>
+            <text x="435" y="103" text-anchor="middle" fill="#16A394" font-weight="600" font-size="14">EHA</text>
+            <text x="435" y="122" text-anchor="middle" fill="#C8CEDA" font-size="10.5">Exception Handler</text>
+            <line x1="510" y1="108" x2="548" y2="108" stroke="#5B6472" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+            <!-- SVA -->
+            <rect x="550" y="72" width="150" height="72" rx="6" fill="#141F35" stroke="#16A394" stroke-width="1.6"/>
+            <text x="625" y="103" text-anchor="middle" fill="#16A394" font-weight="600" font-size="14">SVA</text>
+            <text x="625" y="122" text-anchor="middle" fill="#C8CEDA" font-size="10.5">Semantic Validator</text>
+            <line x1="700" y1="108" x2="738" y2="108" stroke="#5B6472" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+            <!-- FPGA -->
+            <rect x="740" y="72" width="150" height="72" rx="6" fill="#141F35" stroke="#16A394" stroke-width="1.6"/>
+            <text x="815" y="103" text-anchor="middle" fill="#16A394" font-weight="600" font-size="14">FPGA</text>
+            <text x="815" y="122" text-anchor="middle" fill="#C8CEDA" font-size="10.5">Policy Generator</text>
+            <line x1="890" y1="108" x2="928" y2="108" stroke="#5B6472" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+            <!-- SAA -->
+            <rect x="930" y="72" width="150" height="72" rx="6" fill="#141F35" stroke="#16A394" stroke-width="1.6"/>
+            <text x="1005" y="103" text-anchor="middle" fill="#16A394" font-weight="600" font-size="14">SAA</text>
+            <text x="1005" y="122" text-anchor="middle" fill="#C8CEDA" font-size="10.5">Syntax Audit</text>
+
+            <!-- output -->
+            <text x="245" y="165" text-anchor="middle" fill="#7C8798" font-size="10">FIPA-ACL orchestration</text>
+            <line x1="1005" y1="150" x2="1005" y2="185" stroke="#5B6472" stroke-width="1.4" marker-end="url(#arrow)"/>
+            <rect x="915" y="185" width="180" height="30" rx="15" fill="none" stroke="#C6883A" stroke-width="1.4"/>
+            <text x="1005" y="205" text-anchor="middle" fill="#C6883A" font-size="12">ODRL 2.2 policy</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="tag-row">
+        <span class="tag"><i class="fa-solid fa-comments"></i>FIPA-ACL</span>
+        <span class="tag"><i class="fa-solid fa-scale-balanced"></i>ODRL 2.2</span>
+        <span class="tag"><i class="fa-solid fa-check-double"></i>SHACL</span>
+        <span class="tag"><i class="fa-solid fa-share-nodes"></i>JSON-LD / RDF</span>
+        <span class="tag"><img class="tech-icon invert-on-dark" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoftazure.svg" alt="">Azure OpenAI</span>
+        <span class="tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/python.svg" alt="">Python</span>
+        <span class="tag"><i class="fa-solid fa-gavel"></i>LLM-as-Judge</span>
+      </div>
+
+      <div class="flagship-links">
+        <a class="btn btn-ghost" href="https://github.com/dinouch" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section-head"><span class="tick"></span><h2>Projects</h2></div>
+      <div class="legend reveal">
+        <span><span class="dot ai"></span>AI &amp; machine learning</span>
+        <span><span class="dot data"></span>Data &amp; decision support</span>
+        <span><span class="dot security"></span>Security &amp; governance</span>
+        <span><span class="dot eng"></span>Systems &amp; engineering</span>
+      </div>
+
+      <div class="project-grid reveal">
+
+        <article class="card cat-data">
+          <div class="card-top">
+            <h3>WOMS: Decision Support for Sonatrach</h3>
+            <span class="card-year">2025</span>
+          </div>
+          <p>Built a decision support system that extracts, transforms and analyzes field activity reports, detecting anomalies and generating alerts. The solution models the underlying decision workflow and exposes two dedicated business intelligence interfaces, one for managers and one for field engineers.</p>
+          <div class="card-tags">
+            <span class="pill"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openjdk.svg" alt="">Java EE</span>
+            <span class="pill"><i class="fa-solid fa-database"></i>Oracle</span>
+            <span class="pill"><i class="fa-solid fa-filter"></i>ETL</span>
+            <span class="pill"><i class="fa-solid fa-server"></i>TomEE</span>
+          </div>
+          <div class="card-foot">
+            <a class="gh-link" href="https://github.com/dinouch" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>GitHub</a>
+          </div>
+        </article>
+
+        <article class="card cat-ai">
+          <div class="card-top">
+            <h3>Saline Groundwater Irrigation for the Sahara</h3>
+            <span class="card-year">2025</span>
+          </div>
+          <p>Explored whether saline groundwater from the Sahara can be safely used for irrigation. Combined a Deep Q-Network with an LSTM to assess water usability over time, and designed a reward function that weighs water quality against irrigation conditions to guide the system toward sound decisions.</p>
+          <div class="card-tags">
+            <span class="pill"><i class="fa-solid fa-brain"></i>DQN</span>
+            <span class="pill"><i class="fa-solid fa-wave-square"></i>LSTM</span>
+            <span class="pill"><i class="fa-solid fa-arrows-spin"></i>Deep RL</span>
+          </div>
+          <div class="card-foot">
+            <a class="gh-link" href="https://github.com/dinouch" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>GitHub</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <h3>ElMiyyah Complaints Management</h3>
+            <span class="card-year">2024</span>
+          </div>
+          <p>Developed a complete Odoo module for managing complaints related to drinking water, automating response workflows and keeping a full trace of every incident from report to resolution.</p>
+          <div class="card-tags">
+            <span class="pill"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/odoo.svg" alt="">Odoo</span>
+            <span class="pill"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/postgresql.svg" alt="">PostgreSQL</span>
+          </div>
+          <div class="card-foot">
+            <a class="gh-link" href="https://github.com/dinouch" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>GitHub</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <h3>ESI Maintenance Process Digitalization</h3>
+            <span class="card-year">2025</span>
+          </div>
+          <p>Digitalized the maintenance process at ESI end to end, modeling the workflow in BPMN and automating it, while coordinating with stakeholders through every stage of the change.</p>
+          <div class="card-tags">
+            <span class="pill"><i class="fa-solid fa-diagram-project"></i>BPMN</span>
+            <span class="pill"><i class="fa-solid fa-gears"></i>Automation</span>
+          </div>
+          <div class="card-foot">
+            <a class="gh-link" href="https://github.com/dinouch" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>GitHub</a>
+          </div>
+        </article>
+
+        <article class="card cat-ai">
+          <div class="card-top">
+            <h3>Tatweer Hackathon: Smart Logistics</h3>
+            <span class="card-year">2025</span>
+          </div>
+          <div class="card-prize"><i class="fa-solid fa-trophy"></i>1st prize, National Hackathon</div>
+          <p>Built an AI model with my team to improve supply chain efficiency in Algeria, focusing on optimizing the loading phase of logistics operations. The system paired a mobile application with an analytical backend for real-time management.</p>
+          <div class="card-tags">
+            <span class="pill"><i class="fa-solid fa-robot"></i>AI / ML</span>
+            <span class="pill"><i class="fa-solid fa-mobile-screen-button"></i>Mobile App</span>
+            <span class="pill"><i class="fa-solid fa-bolt"></i>Real-time backend</span>
+          </div>
+          <div class="card-foot">
+            <a class="gh-link" href="https://github.com/dinouch" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>GitHub</a>
+          </div>
+        </article>
+
+        <article class="card cat-data">
+          <div class="card-top">
+            <h3>Investment Profitability Simulator</h3>
+            <span class="card-year">2024</span>
+          </div>
+          <p>A web application that compares three financing methods side by side using net present value, repayment schedules and financing simulations, helping users choose the most profitable option for a given investment.</p>
+          <div class="card-tags">
+            <span class="pill"><i class="fa-solid fa-calculator"></i>NPV analysis</span>
+            <span class="pill"><i class="fa-solid fa-chart-line"></i>Financial modeling</span>
+            <span class="pill"><i class="fa-solid fa-globe"></i>Web app</span>
+          </div>
+          <div class="card-foot">
+            <a class="gh-link" href="https://github.com/dinouch" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>GitHub</a>
+          </div>
+        </article>
+
+        <article class="card cat-security">
+          <div class="card-top">
+            <h3>Business Continuity Plan</h3>
+            <span class="card-year">2025</span>
+          </div>
+          <p>Developed a business continuity plan aligned with ISO 27001 and ISO 22301, covering risk analysis and the security of critical systems, with preventive measures and a disaster recovery plan.</p>
+          <div class="card-tags">
+            <span class="pill"><i class="fa-solid fa-shield-halved"></i>ISO 27001 / 22301</span>
+            <span class="pill"><i class="fa-solid fa-triangle-exclamation"></i>Risk analysis</span>
+            <span class="pill"><i class="fa-solid fa-rotate-left"></i>DRP</span>
+          </div>
+          <div class="card-foot">
+            <a class="gh-link" href="https://github.com/dinouch" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>GitHub</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills" style="background:var(--paper-2);">
+    <div class="wrap">
+      <div class="section-head"><span class="tick"></span><h2>Skills</h2></div>
+      <div class="skills-grid reveal">
+
+        <div class="skill-group">
+          <h3>AI &amp; Data</h3>
+          <div class="skill-tags">
+            <span class="pill"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/python.svg" alt="">Python</span>
+            <span class="pill"><i class="fa-solid fa-brain"></i>LLMs</span>
+            <span class="pill"><i class="fa-solid fa-robot"></i>Multi-agent systems</span>
+            <span class="pill"><i class="fa-solid fa-database"></i>Advanced SQL</span>
+            <span class="pill"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/oracle.svg" alt="">Oracle</span>
+            <span class="pill"><i class="fa-solid fa-filter"></i>ETL</span>
+            <span class="pill"><i class="fa-solid fa-cubes"></i>Dimensional modeling</span>
+            <span class="pill"><i class="fa-solid fa-chart-line"></i>KPI &amp; reporting</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Development &amp; Architecture</h3>
+          <div class="skill-tags">
+            <span class="pill"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/django.svg" alt="">Django</span>
+            <span class="pill"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openjdk.svg" alt="">Java / Java EE</span>
+            <span class="pill"><i class="fa-solid fa-microchip"></i>C</span>
+            <span class="pill"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/react.svg" alt="">React</span>
+            <span class="pill"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/kotlin.svg" alt="">Kotlin</span>
+            <span class="pill"><i class="fa-solid fa-diagram-project"></i>Microservices</span>
+            <span class="pill"><i class="fa-solid fa-plug"></i>REST APIs</span>
+            <span class="pill"><i class="fa-solid fa-sitemap"></i>UML / BPMN</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Project Management</h3>
+          <div class="skill-tags">
+            <span class="pill"><i class="fa-solid fa-arrows-rotate"></i>Agile / Scrum</span>
+            <span class="pill"><i class="fa-solid fa-right-left"></i>Change management</span>
+            <span class="pill"><i class="fa-solid fa-magnifying-glass-chart"></i>Needs analysis</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>IS Security &amp; Governance</h3>
+          <div class="skill-tags">
+            <span class="pill"><i class="fa-solid fa-clipboard-check"></i>IS audit</span>
+            <span class="pill"><i class="fa-solid fa-shield-halved"></i>BCP / DRP</span>
+            <span class="pill"><i class="fa-solid fa-key"></i>Access security</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Databases &amp; Networks</h3>
+          <div class="skill-tags">
+            <span class="pill"><i class="fa-solid fa-table"></i>SQL modeling</span>
+            <span class="pill"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/postgresql.svg" alt="">PostgreSQL</span>
+            <span class="pill"><i class="fa-solid fa-lock"></i>HTTPS</span>
+            <span class="pill"><i class="fa-solid fa-user-shield"></i>VPN</span>
+            <span class="pill"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wireshark.svg" alt="">Wireshark</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Soft Skills</h3>
+          <div class="skill-tags">
+            <span class="pill"><i class="fa-solid fa-handshake"></i>Coordination</span>
+            <span class="pill"><i class="fa-solid fa-people-group"></i>Teamwork</span>
+            <span class="pill"><i class="fa-solid fa-magnifying-glass"></i>Critical analysis</span>
+            <span class="pill"><i class="fa-solid fa-lightbulb"></i>Problem solving</span>
+            <span class="pill"><i class="fa-solid fa-comments"></i>Communication</span>
+            <span class="pill"><i class="fa-solid fa-list-check"></i>Priority management</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES + LANGUAGES -->
+  <section class="section" id="certificates">
+    <div class="wrap">
+      <div class="section-head"><span class="tick"></span><h2>Certificates &amp; languages</h2></div>
+      <div class="cert-lang-grid reveal">
+        <ul class="cert-list">
+          <li>
+            <i class="fa-brands fa-google"></i>
+            <div>
+              <div class="cert-name">Foundations of Cybersecurity</div>
+              <div class="cert-issuer">Google</div>
+            </div>
+          </li>
+          <li>
+            <i class="fa-brands fa-google"></i>
+            <div>
+              <div class="cert-name">Generative AI</div>
+              <div class="cert-issuer">Google</div>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-certificate"></i>
+            <div>
+              <div class="cert-name">CompTIA Security+</div>
+              <div class="cert-issuer">GOMYCODE</div>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-award"></i>
+            <div>
+              <div class="cert-name">DCF Hackathon, participation</div>
+              <div class="cert-issuer">Djezzy MicroClub</div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="lang-grid">
+          <div class="lang-card">
+            <div class="lang-name"><i class="fa-solid fa-language"></i>Kabyle</div>
+            <div class="lang-level">Native language</div>
+          </div>
+          <div class="lang-card">
+            <div class="lang-name"><i class="fa-solid fa-language"></i>French</div>
+            <div class="lang-level">TCF C2, 2025</div>
+          </div>
+          <div class="lang-card">
+            <div class="lang-name"><i class="fa-solid fa-language"></i>English</div>
+            <div class="lang-level">Fluent</div>
+          </div>
+          <div class="lang-card">
+            <div class="lang-name"><i class="fa-solid fa-language"></i>Arabic</div>
+            <div class="lang-level">Fluent</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER / CONTACT -->
+<footer class="section footer" id="contact">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <h2>Let's talk</h2>
+        <p class="lede">I'm looking for roles in AI, data and information systems engineering. If any of this work is relevant to what you're building, I would like to hear from you.</p>
+      </div>
+      <div class="footer-contacts">
+        <a href="mailto:kd_mallek@esi.dz"><i class="fa-solid fa-envelope"></i>kd_mallek@esi.dz</a>
+        <a href="tel:+213556808530"><i class="fa-solid fa-phone"></i>+213 556 808 530</a>
+        <a href="https://linkedin.com/in/dinamallek9" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i>linkedin.com/in/dinamallek9</a>
+        <a href="https://github.com/dinouch" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>github.com/dinouch</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dina Mallek</span>
+      <div class="footer-social">
+        <a href="https://github.com/dinouch" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/dinamallek9" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:kd_mallek@esi.dz" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+</body>
+</html>
